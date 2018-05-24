@@ -9,6 +9,7 @@
   "author": "encima",
   "license": "ISC",
   "dependencies": {
+    "argparse": "^1.0.10",
     "article-parser": "^2.3.7",
     "google-translate-api": "^2.3.0",
     "nodemailer": "^4.6.5",
