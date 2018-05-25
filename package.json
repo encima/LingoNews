@@ -11,8 +11,10 @@
   "dependencies": {
     "argparse": "^1.0.10",
     "article-parser": "^2.3.7",
+    "feedparser": "^2.2.9",
     "google-translate-api": "^2.3.0",
     "nodemailer": "^4.6.5",
+    "rssparser": "0.0.11",
     "striptags": "^3.1.1"
   }
 }
