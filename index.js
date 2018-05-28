@@ -60,7 +60,7 @@ const sendEmail = (rec, sub, text) => {
     from: 'chris@gwillia.ms',
     to: rec,
     subject: sub,
-    text: text
+    html: text
   }
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
@@ -93,8 +93,8 @@ const url = chooseSource(args, from, (url) => {
   extract(url).then((article) => {
     const formatted = striptags(article.content);
     translate(formatted, {to: args.to || to}).then(res => {
-        sendEmail(email, `[${from.toUpperCase()}] Translate this - ${url}`, formatted);
-        sendEmail(email, `[${to.toUpperCase()}] Translate this - ${url}`, res.text);
+        sendEmail(email, `[${from.toUpperCase()}] Translate this - ${url}`, formatted.replace(/\./g, '. <br>'));
+        sendEmail(email, `[${to.toUpperCase()}] Translate this - ${url}`, res.text.replace(/\./g, '. <br>'));
     }).catch(err => {
         console.error(err);
     });
