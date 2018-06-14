@@ -6,6 +6,8 @@ config.smtpSettings = {
         pass: 'so_secure_128'
     }
 }
+config.from = 'lingo@news.com'
+config.to = 'lingo@news.com'
 config.feeds = {
     en: [
         'http://www.economist.com/sections/science-technology/rss.xml'

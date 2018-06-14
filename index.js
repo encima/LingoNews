@@ -57,7 +57,7 @@ console.log(from)
 const sendEmail = (rec, sub, text) => {
   let transporter = nodemailer.createTransport(config.smtpSettings);
   let mailOptions = {
-    from: 'chris@gwillia.ms',
+    from: config.from,
     to: rec,
     subject: sub,
     html: text
@@ -87,7 +87,7 @@ const chooseSource = (args, from, cb) => {
   }
 }
 
-const email = args.email || 'encima@gmail.com';
+const email = args.email || config.send_to;
 const url = chooseSource(args, from, (url) => {
   console.log(`Chosen: ${url}`);
   extract(url).then((article) => {
@@ -100,7 +100,7 @@ const url = chooseSource(args, from, (url) => {
     });
   }).catch((err) => {
     console.log(err);
-  });  
+  });
 });
 
 
